@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile & Course Information</title>
+</head>
+<body>
+
+  <!-- Header and Navigation -->
+  <header>
+    <h1>Student Profile</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#courses">Enrolled Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section with headings, paragraphs, list, and an image -->
+    <section id="about">
+      <h2>About Me</h2>
+      <img src="profile-placeholder.jpg" alt="A headshot of the student" width="150">
+      <p>Hello! I am a 3rd-semester Computer Science engineering student. I am passionate about learning full-stack development and building interactive applications.</p>
+      
+      <h3>My Core Skills</h3>
+      <ul>
+        <li>C Programming</li>
+        <li>Basic Web Fundamentals</li>
+        <li>Version Control (Git)</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Section with a small table -->
+    <section id="courses">
+      <h2>Enrolled Courses</h2>
+      <table border="1">
+        <tr>
+          <th>Course Code</th>
+          <th>Course Name</th>
+          <th>Credits</th>
+        </tr>
+        <tr>
+          <td>23CS31</td>
+          <td>Full Stack Development Skill Lab</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>23CS32</td>
+          <td>Data Structures and Algorithms</td>
+          <td>4</td>
+        </tr>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- Section with a simple form -->
+    <section id="contact">
+      <h2>Contact & Course Selection Form</h2>
+      <form action="https://httpbin.org/get" method="get">
+        
+        <div style="margin-bottom: 10px;">
+          <label for="studentName">Full Name:</label><br>
+          <input type="text" id="studentName" name="name" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <label for="studentEmail">Email Address:</label><br>
+          <input type="email" id="studentEmail" name="email" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <label for="courseSelect">Select an Elective:</label><br>
+          <select id="courseSelect" name="course">
+            <option value="webdev">Web Development</option>
+            <option value="ai">Artificial Intelligence</option>
+            <option value="iot">Internet of Things</option>
+          </select>
+        </div>
+
+        <button type="submit">Submit Registration</button>
+      
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 RV College of Engineering Student Profile</p>
+  </footer>
+
+</body>
+</html>
