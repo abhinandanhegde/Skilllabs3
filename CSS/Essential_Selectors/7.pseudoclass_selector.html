@@ -1,0 +1,29 @@
+<!-- 7. Pseudo-class Selector: Targets an element in a special state like :hover -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>7. Pseudo-class Selector</title>
+  <style>
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: lightgray;
+      border: 1px solid #999;
+      cursor: pointer;
+    }
+    /* Pseudo-class Selector (:hover): applies ONLY when the user hovers the mouse over the button */
+    button:hover {
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Pseudo-class Selector (<code>button:hover</code>)</h2>
+  <p>Move your mouse pointer over the button below to see its state change:</p>
+  <button>Hover Over Me!</button>
+
+</body>
+</html>

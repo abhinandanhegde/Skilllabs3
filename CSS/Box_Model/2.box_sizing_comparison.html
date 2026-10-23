@@ -1,0 +1,62 @@
+<!-- 2. Box Sizing: content-box (default) vs border-box -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. Box Sizing: content-box vs border-box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    /* Default CSS behavior: padding and border are ADDED to the declared width */
+    .content-box-demo {
+      box-sizing: content-box;
+      width: 300px;
+      padding: 30px;
+      border: 10px solid red;
+      background-color: #ffe6e6;
+      margin-bottom: 25px;
+    }
+
+    /* Modern best practice: declared width INCLUDES content, padding, and border */
+    .border-box-demo {
+      box-sizing: border-box;
+      width: 300px;
+      padding: 30px;
+      border: 10px solid green;
+      background-color: #e6ffe6;
+    }
+
+    /* Exact reference ruler of 300px */
+    .ruler-300px {
+      width: 300px;
+      height: 30px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      line-height: 30px;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2><code>content-box</code> vs <code>border-box</code></h2>
+
+  <div class="ruler-300px">&larr; Exact 300px Reference Bar &rarr;</div>
+
+  <div class="content-box-demo">
+    <strong>1. <code>box-sizing: content-box</code> (Default)</strong><br>
+    Declared <code>width: 300px</code> + <code>padding: 30px</code> (x2) + <code>border: 10px</code> (x2)<br>
+    <strong>Actual Total Width = 380px!</strong> (Overflows the 300px bar!)
+  </div>
+
+  <div class="border-box-demo">
+    <strong>2. <code>box-sizing: border-box</code> (Recommended)</strong><br>
+    Declared <code>width: 300px</code> includes the 30px padding and 10px border.<br>
+    <strong>Actual Total Width = Exactly 300px!</strong>
+  </div>
+
+</body>
+</html>

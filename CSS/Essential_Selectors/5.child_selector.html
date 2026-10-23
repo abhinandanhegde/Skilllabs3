@@ -1,0 +1,33 @@
+<!-- 5. Child Selector: Targets ONLY direct <p> children of .card (uses > symbol) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5. Child Selector</title>
+  <style>
+    .card {
+      border: 2px solid #333;
+      padding: 15px;
+    }
+    /* Child Selector (.card > p): styles ONLY <p> tags that are direct children of .card */
+    .card > p {
+      color: darkred;
+      background-color: #fee2e2;
+      padding: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Child Selector (<code>.card &gt; p</code>)</h2>
+
+  <div class="card">
+    <p>Paragraph 1: I am a DIRECT child of <code>.card</code> (Styled!).</p>
+    <div style="border: 1px dashed gray; padding: 10px;">
+      <p>Paragraph 2: I am inside an inner div, NOT a direct child of <code>.card</code> (Ignored!).</p>
+    </div>
+  </div>
+
+</body>
+</html>

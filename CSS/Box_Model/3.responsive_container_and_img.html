@@ -1,0 +1,49 @@
+<!-- 3. Universal Border-Box, Responsive Container & Responsive Images (Section 7.1 of Manual) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3. Responsive Container &amp; Image</title>
+  <style>
+    /* 1. Apply border-box to every element on the page */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    /* 2. Responsive Centered Container */
+    .container {
+      width: 92%;          /* Takes 92% of screen width on small screens (leaves 4% margin on each side) */
+      max-width: 1200px;   /* Never stretches wider than 1200px on huge desktop monitors */
+      margin: 0 auto;      /* Automatically centers the container horizontally */
+      background-color: white;
+      padding: 25px;
+      border: 2px solid #0066cc;
+    }
+
+    /* 3. Responsive Image Rule */
+    img {
+      max-width: 100%;     /* Shrinks to fit inside its container on small screens, never overflows! */
+      height: auto;        /* Preserves the original aspect ratio so the image doesn't look squished */
+      display: block;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Responsive Container &amp; Image Demo</h2>
+    <p>Resize your browser window! This <code>.container</code> always takes <code>width: 92%</code> on smaller screens, stops growing at <code>max-width: 1200px</code> on large screens, and stays centered using <code>margin: 0 auto;</code>.</p>
+
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Laptop with code on screen">
+  </div>
+
+</body>
+</html>

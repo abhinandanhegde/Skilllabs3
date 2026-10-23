@@ -1,0 +1,46 @@
+<!-- 1. CSS Box Model: Every element is a rectangular box with Content, Padding, Border, and Margin -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1. CSS Box Model Layers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fef3c7; /* Light yellow page background so you can see the Margin space! */
+      margin: 30px;
+    }
+    .box-demo {
+      /* 1. CONTENT size */
+      width: 320px;
+      height: 80px;
+      background-color: #bfdbfe; /* Light blue shows Content + Padding area */
+
+      /* 2. PADDING: Internal space between the text content and the border */
+      padding: 25px;
+
+      /* 3. BORDER: Visible boundary around the padding and content */
+      border: 6px solid #1d4ed8;
+
+      /* 4. MARGIN: External space outside the border (pushes other elements away) */
+      margin: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>The 4 Layers of the CSS Box Model</h2>
+  <p>Right-click the box below and select <strong>Inspect</strong> to see the Box Model diagram in Developer Tools!</p>
+
+  <div class="box-demo">
+    <strong>CONTENT AREA (320px &times; 80px)</strong><br>
+    Surrounded by 25px Padding (inside), 6px solid blue Border, and 40px Margin (outside).
+  </div>
+
+  <div class="box-demo">
+    <strong>SECOND BOX</strong><br>
+    Notice how the 40px Margin pushes this second box away from the first box!
+  </div>
+
+</body>
+</html>

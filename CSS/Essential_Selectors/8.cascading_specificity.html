@@ -1,0 +1,42 @@
+<!-- 8. Cascading & Specificity in CSS: Which rule wins when multiple rules conflict? -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>8. CSS Cascade &amp; Specificity</title>
+  <style>
+    /* 1. Element Selector (Lowest specificity) */
+    p {
+      color: blue;
+      font-size: 18px;
+    }
+    /* Source Order Rule: Later rule with same specificity wins! */
+    p {
+      color: purple;
+    }
+
+    /* 2. Class Selector (Higher specificity than element selector) */
+    .highlight {
+      color: orange;
+    }
+
+    /* 3. ID Selector (Higher specificity than class selector) */
+    #special {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>How the Cascade &amp; Specificity Works in CSS</h2>
+
+  <p>1. Normal Paragraph: Both <code>p { color: blue; }</code> and <code>p { color: purple; }</code> target me. <strong>Purple wins</strong> because it comes later in the CSS file (Source Order)!</p>
+
+  <p class="highlight">2. Class Paragraph: Both <code>p</code> and <code>.highlight</code> target me. <strong>Orange wins</strong> because a Class selector has higher specificity than an Element selector!</p>
+
+  <p class="highlight" id="special">3. ID Paragraph: <code>p</code>, <code>.highlight</code>, and <code>#special</code> all target me. <strong>Green wins</strong> because an ID selector beats both Class and Element selectors!</p>
+
+  <p class="highlight" id="special" style="color: red;">4. Inline Style Paragraph: <strong>Red wins</strong> because an inline <code>style=""</code> attribute beats ID, Class, and Element selectors!</p>
+
+</body>
+</html>

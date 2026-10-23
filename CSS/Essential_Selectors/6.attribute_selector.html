@@ -1,0 +1,29 @@
+<!-- 6. Attribute Selector: Targets elements matching a specific attribute value -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>6. Attribute Selector</title>
+  <style>
+    /* Attribute Selector: only targets <input> elements where type='email' */
+    input[type='email'] {
+      border: 2px solid blue;
+      background-color: #e6f2ff;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Attribute Selector (<code>input[type='email']</code>)</h2>
+
+  <label>Name (<code>type="text"</code> - Not targeted):<br>
+    <input type="text" placeholder="Enter your name">
+  </label>
+  <br><br>
+  <label>Email (<code>type="email"</code> - Targeted by CSS!):<br>
+    <input type="email" placeholder="student@rvce.edu">
+  </label>
+
+</body>
+</html>

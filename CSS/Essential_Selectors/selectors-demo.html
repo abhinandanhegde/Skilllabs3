@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Demo</title>
+  <style>
+    /* ==========================================
+       1. PAGE LAYOUT STYLES (For Presentation)
+       ========================================== */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    .selector-block {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .selector-name {
+      color: #333;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    pre {
+      background-color: #282c34;
+      color: #61dafb;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .live-demo-box {
+      border: 2px dashed #999;
+      padding: 15px;
+      background-color: #fafafa;
+      margin-top: 15px;
+    }
+
+    /* ==========================================
+       2. LIVE DEMO STYLES (The Actual Selectors)
+       ========================================== */
+    
+    /* 1. Element Selector: Targets all <blockquote> elements in the demo */
+    blockquote {
+      border-left: 5px solid blue;
+      padding-left: 10px;
+      background-color: #e6f2ff;
+    }
+
+    /* 2. Class Selector */
+    .card {
+      padding: 20px;
+      background-color: #ffe6e6;
+      border: 1px solid red;
+    }
+
+    /* 3. ID Selector */
+    #main-highlight {
+      background-color: lightgreen;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    /* 4. Descendant Selector (Any span inside .parent-box) */
+    .parent-box span {
+      color: darkblue;
+      font-weight: bold;
+    }
+
+    /* 5. Child Selector (Only direct span children of .parent-box) */
+    .parent-box > span {
+      text-decoration: underline;
+      color: red; 
+    }
+
+    /* 6. Attribute Selector */
+    input[type='email'] {
+      border: 2px solid blue;
+      background-color: #f0f8ff;
+      padding: 5px;
+    }
+
+    /* 7. Pseudo-class Selector */
+    .hover-btn {
+      padding: 10px 15px;
+      cursor: pointer;
+      background-color: lightgray;
+      border: none;
+      transition: 0.3s;
+    }
+    .hover-btn:hover {
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 style="text-align: center;">CSS Selectors Presentation</h1>
+
+    <!-- 1. Element Selector -->
+    <div class="selector-block">
+      <h2 class="selector-name">1. Element Selector (<code>blockquote</code>)</h2>
+      <p><strong>Explanation:</strong> Targets all elements of a specific type across the page.</p>
+      <pre><code>blockquote {
+  border-left: 5px solid blue;
+  background-color: #e6f2ff;
+}</code></pre>
+      <div class="live-demo-box">
+        <strong>Result:</strong>
+        <blockquote>This is a blockquote. It gets styled just by using its tag name!</blockquote>
+        <blockquote>Here is another one. It gets the exact same style automatically.</blockquote>
+      </div>
+    </div>
+
+    <!-- 2. Class Selector -->
+    <div class="selector-block">
+      <h2 class="selector-name">2. Class Selector (<code>.card</code>)</h2>
+      <p><strong>Explanation:</strong> Targets elements sharing a specific class name. Ideal for reusable components.</p>
+      <pre><code>.card {
+  padding: 20px;
+  background-color: #ffe6e6;
+  border: 1px solid red;
+}</code></pre>
+      <div class="live-demo-box">
+        <strong>Result:</strong>
+        <div class="card">This div has <code>class="card"</code>.</div>
+        <br>
+        <div class="card">This is another <code>class="card"</code>. You can reuse classes!</div>
+      </div>
+    </div>
+
+    <!-- 3. ID Selector -->
+    <div class="selector-block">
+      <h2 class="selector-name">3. ID Selector (<code>#main-highlight</code>)</h2>
+      <p><strong>Explanation:</strong> Targets one specific element with a unique ID on the page.</p>
+      <pre><code>#main-highlight {
+  background-color: lightgreen;
+  font-weight: bold;
+}</code></pre>
+      <div class="live-demo-box">
+        <strong>Result:</strong>
+        <div id="main-highlight">This div has <code>id="main-highlight"</code>. IDs should only be used once per page!</div>
+      </div>
+    </div>
+
+    <!-- 4 & 5. Descendant vs Child Selector (Combined for comparison) -->
+    <div class="selector-block">
+      <h2 class="selector-name">4 & 5. Descendant (<code>space</code>) vs Child (<code>></code>)</h2>
+      <p><strong>Explanation:</strong> <br>
+      - Descendant (<code>.parent-box span</code>) targets nested elements <em>anywhere</em> inside. (Colored Dark Blue)<br>
+      - Child (<code>.parent-box > span</code>) targets <em>only direct</em> children. (Underlined and Red)</p>
+      <pre><code>.parent-box span { color: darkblue; }
+.parent-box > span { text-decoration: underline; color: red; }</code></pre>
+      <div class="live-demo-box">
+        <strong>Result:</strong>
+        <div class="parent-box" style="border:1px solid #ccc; padding:10px;">
+          <span>I am a DIRECT child span (Underlined & Red).</span>
+          <div style="margin-left: 20px; margin-top:10px; border:1px solid #eee; padding:10px;">
+            <span>I am a nested DESCENDANT span inside another div (Dark Blue only).</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Attribute Selector -->
+    <div class="selector-block">
+      <h2 class="selector-name">6. Attribute Selector (<code>[type='email']</code>)</h2>
+      <p><strong>Explanation:</strong> Targets elements based on a specific attribute value.</p>
+      <pre><code>input[type='email'] {
+  border: 2px solid blue;
+  background-color: #f0f8ff;
+}</code></pre>
+      <div class="live-demo-box">
+        <strong>Result:</strong>
+        <label>Text Input (Ignored): <input type="text" placeholder="Name"></label><br><br>
+        <label>Email Input (Targeted): <input type="email" placeholder="Email"></label>
+      </div>
+    </div>
+
+    <!-- 7. Pseudo-class Selector -->
+    <div class="selector-block">
+      <h2 class="selector-name">7. Pseudo-class Selector (<code>:hover</code>)</h2>
+      <p><strong>Explanation:</strong> Targets an element only when it is in a specific interactive state or condition (like a mouse hover).</p>
+      <pre><code>.hover-btn:hover {
+  background-color: green;
+  color: white;
+}</code></pre>
+      <div class="live-demo-box">
+        <strong>Result:</strong>
+        <button class="hover-btn">Hover your mouse over me!</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
