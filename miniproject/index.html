@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+   
+  <header class="tip-banner">
+    <strong>Daily Tip:</strong>
+    <span id="dailyTip">Loading a tip...</span>
+  </header>
+
+  <main class="app">
+    <h1>Student Task Manager</h1>
+
+    <form id="taskForm" class="task-form">
+      <input id="taskInput" type="text" placeholder="Add new task..." aria-label="New task" autocomplete="off">
+      <button type="submit">Add Task</button>
+    </form>
+    <p id="formError" class="error" role="alert"></p>
+
+    <div class="filters" role="group" aria-label="Filter tasks">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="pending">Pending</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <ul id="taskList" class="task-list"></ul>
+    <p id="taskCount" class="task-count"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
